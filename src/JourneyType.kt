@@ -1,0 +1,1 @@
+enum class JourneyType { SINGLE, RETURN }
