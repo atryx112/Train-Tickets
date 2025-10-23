@@ -180,11 +180,7 @@ class TicketMachine(
         io.println("  Type: $journeyType")
         io.println("  Price: ${Money.formatPence(price)}")
 
-        val proceed = yesNo("Proceed to buy this ticket now?")
-        if (!proceed) {
-            io.println("Cancelled.\n")
-            return
-        }
+
         handlePurchase(quote)
     }
 
