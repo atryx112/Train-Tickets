@@ -1,10 +1,10 @@
 fun main() {
     val initialStations = listOf(
-        Station("Manchester Piccadilly", Money.of(28.00), Money.of(50.00)),
-        Station("Birmingham New Street", Money.of(19.50), Money.of(35.00)),
-        Station("Edinburgh Waverley",    Money.of(45.00), Money.of(82.00)),
-        Station("Leeds",                 Money.of(26.00), Money.of(46.00)),
-        Station("Bristol Temple Meads",  Money.of(24.00), Money.of(42.00)),
+        Station("Manchester Piccadilly", Money.of(100.00), Money.of(50.00)),
+        Station("Birmingham New Street", Money.of(100.50), Money.of(35.00)),
+        Station("Edinburgh Waverley",    Money.of(100.00), Money.of(82.00)),
+        Station("Leeds",                 Money.of(100.00), Money.of(46.00)),
+        Station("Bristol Temple Meads",  Money.of(100.00), Money.of(42.00)),
     )
 
     val network = Network(initialStations)
