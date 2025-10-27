@@ -1,6 +1,6 @@
 fun main() {
     val initialStations = listOf(
-        Station("Manchester Piccadilly", Money.of(45.00), Money.of(50.00)),
+        Station("Manchester Piccadilly", Money.of(55.00), Money.of(50.00)),
         Station("Birmingham New Street", Money.of(65.50), Money.of(35.00)),
         Station("Edinburgh Waverley",    Money.of(75.00), Money.of(82.00)),
         Station("Leeds",                 Money.of(85.00), Money.of(46.00)),
