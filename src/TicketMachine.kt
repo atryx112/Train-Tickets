@@ -14,7 +14,7 @@ class TicketMachine(
                 else -> break@loop
             }
         }
-        io.println("Goodbye.")
+        io.println("Goodbye....")
     }
 
     // === Search flow ===
@@ -41,7 +41,7 @@ class TicketMachine(
         val matches = if (q.isBlank()) all else all.filter { it.name.contains(q, ignoreCase = true) }
 
         if (matches.isEmpty()) {
-            io.println("No matching destinations.")
+            io.println("No matching destinations...")
             return
         }
 
@@ -118,10 +118,32 @@ class TicketMachine(
 
     private fun listDestinations() {
         val all = network.all()
-        if (all.isEmpty()) { io.println("No destinations configured."); return }
-        io.println("Station | Single | Return | Sales")
-        all.forEach { io.println("${it.name} | ${it.single} | ${it.ret} | ${it.sales}") }
+        if (all.isEmpty()) {
+            io.println("No destinations configured.")
+            return
+        }
+
+        // Column widths
+        val nameWidth = all.maxOf { it.name.length }.coerceAtLeast(10)
+        val priceWidth = 10
+        val salesWidth = 5
+
+        // Header
+        io.println(
+            "%-${nameWidth}s | %-${priceWidth}s | %-${priceWidth}s | %${salesWidth}s"
+                .format("Station", "Single", "Return", "Sales")
+        )
+        io.println("-".repeat(nameWidth + priceWidth * 2 + salesWidth + 9))
+
+        // Rows
+        all.forEach {
+            io.println(
+                "%-${nameWidth}s | %-${priceWidth}s | %-${priceWidth}s | %${salesWidth}d"
+                    .format(it.name, it.single, it.ret, it.sales)
+            )
+        }
     }
+
 
     private fun addDestination() {
         val name = io.readLine("New station name: ").ifBlank {
@@ -159,3 +181,4 @@ class TicketMachine(
         return io.chooseFrom("Choose an option:", items)
     }
 }
+
