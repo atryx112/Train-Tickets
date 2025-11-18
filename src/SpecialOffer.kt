@@ -1,3 +1,1 @@
 class SpecialOffer
-test{
-}
