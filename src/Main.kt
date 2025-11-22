@@ -18,3 +18,4 @@ fun main() {
     val app = TicketMachine(network, fareCalc, io, originName)
     app.run()
 }
+
